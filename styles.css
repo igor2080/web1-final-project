@@ -96,3 +96,13 @@ h1,
         display: none;
     }
 }
+
+#postGeneratorCount {
+    width: 3em;
+    padding-left: 3%;
+}
+
+#postGeneratorCount:invalid+#generatePostsButton {
+    pointer-events: none;
+    color: gray;
+}

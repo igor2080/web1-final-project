@@ -23,7 +23,7 @@ function updateGuestbook() {
     guestbook.innerHTML = "";
 
     let posts = [];
-    
+
     if (localStorage.getItem('posts') && localStorage.getItem('posts').length > 2) {
         let heading = document.createElement('h2');
         heading.innerHTML = "What others have posted";
@@ -128,6 +128,19 @@ function removePost(num) {
     }
 }
 
+function generatePosts() {
+    let postCount = document.getElementById("postGeneratorCount").value;
+    if (postCount > 0) {
+        for (let i = 0; i < postCount; i++) {
+            let post = new Post("Anonymous",
+                Math.trunc(Math.random() * 100000) + "@random.com",
+                sentences[randomInt(0, sentences.length)]);
+            addPost(post);
+        }
+        updateGuestbook();
+    }
+}
+
 class Post {
     constructor(name, email, text) {
         this.name = name;
@@ -153,4 +166,8 @@ function unixDateToString(unix) {
     let formattedString = `${date.getDay() + 1} ${months[date.getMonth()]} ${date.getFullYear()} on ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
 
     return formattedString;
+}
+
+function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
