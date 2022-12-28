@@ -130,7 +130,7 @@ function removePost(num) {
 
 function generatePosts() {
     let postCount = document.getElementById("postGeneratorCount").value;
-    if (postCount > 0) {
+    if (postCount > 0) { 
         for (let i = 0; i < postCount; i++) {
             let post = new Post("Anonymous",
                 Math.trunc(Math.random() * 100000) + "@random.com",
