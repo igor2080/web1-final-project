@@ -124,10 +124,17 @@ function addPost(post) {
 function removePost(num) {
     if (localStorage.getItem('posts')) {
         let posts = JSON.parse(localStorage.getItem('posts'));
-
         posts.splice(num, 1);
         localStorage.setItem('posts', JSON.stringify(posts));
-        updateGuestbook();
+        $(`.bookItem:nth-of-type(${num + 1})`).fadeOut("", function () {
+            if (localStorage.getItem("posts") == '[]') {
+                $('#postsHeading').fadeOut("", () => {
+                    updateGuestbook();
+                });
+            }
+            else
+                updateGuestbook();
+        });
     }
 }
 
