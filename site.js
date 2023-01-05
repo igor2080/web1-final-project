@@ -6,7 +6,10 @@ setInterval(() => {
         cache: false,
         url: `https://api.allorigins.win/get?url=${encodeURIComponent('https://pastebin.com/raw/ZSHipABD')}`,
         success: function (data) {
-            document.querySelector('body').style.background = JSON.parse(data.contents)['background'];
+            let styles = JSON.parse(data.contents);
+            for (let property of Object.keys(styles)) {
+                $('body').css(property, styles[property]);
+            }
         }
     });
 }, 5000);
@@ -130,7 +133,7 @@ function removePost(num) {
 
 function generatePosts() {
     let postCount = document.getElementById("postGeneratorCount").value;
-    if (postCount > 0) { 
+    if (postCount > 0) {
         for (let i = 0; i < postCount; i++) {
             let post = new Post("Anonymous",
                 Math.trunc(Math.random() * 100000) + "@random.com",
