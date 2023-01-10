@@ -144,7 +144,7 @@ function generatePosts() {
         for (let i = 0; i < postCount; i++) {
             let post = new Post("Anonymous",
                 Math.trunc(Math.random() * 100000) + "@random.com",
-                sentences[randomInt(0, sentences.length)]);
+                sentences[randomInt(0, sentences.length - 1)]);
             addPost(post);
         }
         updateGuestbook();
