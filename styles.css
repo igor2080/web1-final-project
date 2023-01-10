@@ -23,10 +23,13 @@ header.container {
 }
 
 h1,
-#addPostHeading,
 #postsHeading,
 #madeBy {
     text-align: center;
+}
+
+#addPostHeading {
+    text-align: left;
 }
 
 #madeBy {
@@ -99,7 +102,7 @@ h1,
 
 #postGeneratorCount {
     width: 3em;
-    padding-left: 3%;
+    padding-left: 2%;
 }
 
 #postGeneratorCount:invalid+#generatePostsButton {

@@ -44,13 +44,15 @@
                     <div class="form-group">
                         <label for="postGeneratorCount">
                             Generate</label>
-                            <input type="text" name="postGeneratorCount" id="postGeneratorCount" pattern="\d+" placeholder="N">
-                            <button id="generatePostsButton" onclick="generatePosts()">Posts</button>
-                        
+                        <input type="text" name="postGeneratorCount" id="postGeneratorCount" pattern="^\d*[1-9]\d*"
+                            placeholder="N">
+                        <button id="generatePostsButton" onclick="generatePosts()">Posts</button>
+
                     </div>
                 </div>
                 <div id="explanation">
-                    <ul class="featureList">Some features:
+                    <div style="padding-left:2rem;">Some features:</div>
+                    <ul class="featureList">
                         <li>Form adds to a guestbook on the page</li>
                         <li>Can toggle the form to submit to <a
                                 href="https://www.w3schools.com/action_page.php">https://www.w3schools.com/action_page.php</a>
