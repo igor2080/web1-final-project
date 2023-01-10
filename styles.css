@@ -95,7 +95,7 @@ h1,
         grid-template-columns: 100% 0%;
     }
 
-    .featureList {
+    #explanation>* {
         display: none;
     }
 }
